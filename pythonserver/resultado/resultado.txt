@@ -1,0 +1,11 @@
+Resultado de: SELECT User, Host FROM mysql.user;
+User                 Host
+----------------------------------------
+appuser              %
+root                 %
+mysql.infoschema     localhost
+mysql.session        localhost
+mysql.sys            localhost
+root                 localhost
+
+6 linha(s)

@@ -1,0 +1,37 @@
+   services:
+     app:
+       build: .
+       container_name: pythonserver-joseFranca
+       ports:
+         - "3333:3333"
+       environment:
+         DB_HOST: db
+         DB_PORT: "3306"
+         DB_NAME: appdb
+         DB_USER: root
+         DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+       depends_on:
+         db:
+           condition: service_healthy
+
+     db:
+       image: mysql:8.0.46-debian
+       container_name: pythonserver-db
+       restart: unless-stopped
+       environment:
+         MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+         MYSQL_DATABASE: appdb
+         MYSQL_USER: appuser
+         MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+       ports:
+         - "3306:3306"
+       volumes:
+         - mysql_data:/var/lib/mysql
+       healthcheck:
+         test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+         interval: 10s
+         timeout: 5s
+         retries: 10
+
+   volumes:
+     mysql_data:

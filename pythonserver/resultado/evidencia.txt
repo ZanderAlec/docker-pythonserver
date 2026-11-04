@@ -1,0 +1,66 @@
+﻿CONTAINER ID   IMAGE                         COMMAND                  CREATED       STATUS                    PORTS                                         NAMES
+4084e4d7ca02   pythonserver-app              "python main.py"         4 hours ago   Up 31 minutes             0.0.0.0:3333->3333/tcp, [::]:3333->3333/tcp   pythonserver-joseFranca
+6e508e5ef033   mysql:8.0.46-debian           "docker-entrypoint.sÔÇª"   4 hours ago   Up 31 minutes (healthy)   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp   pythonserver-db
+91bbd91c4bed   fabricfc/linux-aluno:latest   "/bin/bash"              4 weeks ago   Up 30 minutes                                                           Franc
+[
+    {
+        "Name": "pythonserver_default",
+        "Id": "215d61405aed881bba982423898e6dd0a21d9a4e08ad2fba3ef1a2d657130be9",
+        "Created": "2026-11-04T17:26:52.134495718Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.20.0.0/16",
+                    "Gateway": "172.20.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "4084e4d7ca0219617f99d744cb43217a765916d80cb4296a4fc0015adcfa47df": {
+                "Name": "pythonserver-joseFranca",
+                "EndpointID": "3895be1a1c4a64451789d421bb2244ca4e52445c0a2f331455a74a9c8d48efea",
+                "MacAddress": "c2:28:c8:e8:e5:de",
+                "IPv4Address": "172.20.0.3/16",
+                "IPv6Address": ""
+            },
+            "6e508e5ef03380d5ffcdc182f066c84677d455776599159aad2ed60120dfbce4": {
+                "Name": "pythonserver-db",
+                "EndpointID": "f1bd61bbde670dad942bed0d21cb83df1b0a464629da91c0160a236cf19b0698",
+                "MacAddress": "16:89:2c:28:ae:be",
+                "IPv4Address": "172.20.0.2/16",
+                "IPv6Address": ""
+            },
+            "91bbd91c4bedef5158ed0f8822871e462e3770392a52cda61b97c5b8887d36f2": {
+                "Name": "Franc",
+                "EndpointID": "f8cd8a7e0ebe60c18f5124125761cfb783d1b0f7310027e663061e5af0c7ed1b",
+                "MacAddress": "5e:a8:85:6e:cb:e6",
+                "IPv4Address": "172.20.0.4/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {
+            "com.docker.compose.config-hash": "c75b67636d25b6bf65e8806747946d0f25ff50f38191fc000ab9a5793393aff1",
+            "com.docker.compose.network": "default",
+            "com.docker.compose.project": "pythonserver",
+            "com.docker.compose.version": "2.40.0"
+        }
+    }
+]
+
